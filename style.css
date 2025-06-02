@@ -1,0 +1,214 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #0d0d0d;
+  color: white;
+  font-family: 'Comic Neue', sans-serif;
+  overflow-x: hidden;
+}
+.web-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('spiderman-bg.jpg') center/cover no-repeat;
+  opacity: 0.2;
+  z-index: -1;
+  animation: webGlitch 5s infinite;
+}
+@keyframes webGlitch {
+  0%, 100% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(60deg); }
+}
+.content {
+  text-align: center;
+  margin-top: 80px;
+}
+.avatar {
+  width: 150px;
+  border-radius: 50%;
+  border: 3px solid red;
+  box-shadow: 0 0 20px red;
+  margin-bottom: 20px;
+}
+h1 {
+  font-size: 2.5em;
+  color: #ff2e63;
+}
+p {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+.contact-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ff2e63;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #ff2e63;
+  transition: transform 0.3s;
+}
+.contact-button:hover {
+  transform: scale(1.1);
+}
+
+
+.hanging-spider {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.web-line {
+  width: 2px;
+  height: 150px;
+  background: white;
+  margin: 0 auto;
+  animation: swing-web 4s ease-in-out infinite;
+}
+
+.spider-img {
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+  animation: swing-spider 4s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+@keyframes swing-spider {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(8deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-8deg); }
+}
+
+@keyframes swing-web {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-2deg); }
+}
+
+
+.bio-list {
+  list-style-type: disc;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  padding-left: 20px;
+}
+.bio-list li {
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}
+
+#web-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('3d-spider-web-png.png') center/contain no-repeat;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  animation: fadeOutWeb 3s forwards;
+}
+
+@keyframes fadeOutWeb {
+  0% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+#moving-spider {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+  transition: top 2s ease, left 2s ease;
+}
+
+.bio-list li {
+  margin-bottom: 15px;
+  font-size: 1.2em;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeSlideIn 0.6s forwards;
+}
+.bio-list li:nth-child(1) { animation-delay: 0.2s; }
+.bio-list li:nth-child(2) { animation-delay: 0.4s; }
+.bio-list li:nth-child(3) { animation-delay: 0.6s; }
+.bio-list li:nth-child(4) { animation-delay: 0.8s; }
+.bio-list li:nth-child(5) { animation-delay: 1.0s; }
+.bio-list li:nth-child(6) { animation-delay: 1.2s; }
+.bio-list li:nth-child(7) { animation-delay: 1.4s; }
+.bio-list li:nth-child(8) { animation-delay: 1.6s; }
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+#moving-spider {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  z-index: 10;
+  transition: top 2s ease, left 2s ease;
+  outline: 3px solid white;
+  border-radius: 50%;
+  pointer-events: auto;
+}
+
+.chat-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1001;
+}
+#chat-toggle {
+  font-size: 24px;
+  padding: 10px 12px;
+  background: #ff2e63;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ff2e63;
+  cursor: pointer;
+}
+.chat-form {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  background: rgba(0,0,0,0.95);
+  padding: 15px;
+  border-radius: 10px;
+}
+.chat-form textarea {
+  width: 220px;
+  height: 80px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+}
+.chat-form button {
+  padding: 8px;
+  background: #ff2e63;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
